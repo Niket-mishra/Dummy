@@ -1,0 +1,31 @@
+package com.techlabs.repository;
+
+import java.util.List;
+
+import org.springframework.stereotype.Repository;
+
+import com.techlabs.entity.Student;
+
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.TypedQuery;
+import jakarta.transaction.Transactional;
+
+@Repository
+public class StudentRepositoryImpl implements StudentRepository{
+	
+	private EntityManager manager;
+	
+	@Override
+	@Transactional
+	public void save(Student s) {
+		manager.persist(s);
+		
+	}
+
+	@Override
+	public List<Student> getStudents() {
+		
+		TypedQuery<Student> query = manager.createQuery("select s from Student s",Student.class)
+	}
+
+}

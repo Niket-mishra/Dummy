@@ -1,0 +1,15 @@
+INDEX VERSION 1.4+D:\swabhav training\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+34457956.index
+421262792.index
+1458241194.index
+2385721046.index
+1583712803.index
+866774593.index
+809420361.index
+3469021550.index
+833971360.index
+1529450544.index
+501228706.index
+1873849733.index
+3435648363.index
+971936796.index

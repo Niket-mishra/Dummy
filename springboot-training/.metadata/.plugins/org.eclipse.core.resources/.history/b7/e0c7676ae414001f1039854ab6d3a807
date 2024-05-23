@@ -1,0 +1,24 @@
+package com.techlabs;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.event.EventListener;
+
+import com.techlabs.service.EmailSenderService;
+
+@SpringBootApplication
+public class Application {
+	
+	@Autowired private EmailSenderService service;
+
+	public static void main(String[] args) {
+		SpringApplication.run(Application.class, args);
+	}
+	
+	@EventListener
+	public void triggerEmail() {
+		service.sendEmailWithAttachment(null, null, null, null);
+	}
+
+}

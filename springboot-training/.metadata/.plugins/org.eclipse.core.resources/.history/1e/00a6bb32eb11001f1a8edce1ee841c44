@@ -1,0 +1,28 @@
+package com.techlabs.repository;
+
+import java.util.List;
+
+import org.springframework.stereotype.Repository;
+
+import com.techlabs.entity.Student;
+
+import jakarta.persistence.EntityManager;
+
+@Repository
+public class StudentRepositoryImpl implements StudentRepository{
+	
+	private EntityManager manager
+	
+	@Override
+	public void save(Student s) {
+		
+		
+	}
+
+	@Override
+	public List<Student> getStudents() {
+		
+		return null;
+	}
+
+}

@@ -1,0 +1,21 @@
+package com.techlabs.repository;
+
+import java.util.List;
+
+import com.techlabs.entity.Employee;
+
+public class EmployeeRepositoryImpl implements EmployeeRepository {
+
+	@Override
+	public void save(Employee e) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public List<Employee> getEmployee() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

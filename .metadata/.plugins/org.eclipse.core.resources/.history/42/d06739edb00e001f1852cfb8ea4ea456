@@ -1,0 +1,59 @@
+package com.techlabs.model;
+
+import java.util.List;
+
+public class Account {
+	private long accNo;
+	private double balance;
+	private int bankid;
+	private List<Transaction> transactions;
+	
+	
+	public Account(long accNo, double balance, int bankid) {
+		this.accNo = accNo;
+		this.balance = balance;
+		this.bankid = bankid;
+	}
+
+
+	public long getAccNo() {
+		return accNo;
+	}
+
+
+	public void setAccNo(long accNo) {
+		this.accNo = accNo;
+	}
+
+
+	public double getBalance() {
+		return balance;
+	}
+
+
+	public void setBalance(double balance) {
+		this.balance = balance;
+	}
+
+
+	public int getBankId() {
+		return bankid;
+	}
+
+
+	public void setBankId(int bankid) {
+		this.bankid = bankid;
+	}
+
+
+	@Override
+	public String toString() {
+		return "Account [accNo=" + accNo + ", balance=" + balance + ", bankid=" + bankid + ", transactions="
+				+ transactions + "]";
+	}
+	
+	
+	
+	
+
+}

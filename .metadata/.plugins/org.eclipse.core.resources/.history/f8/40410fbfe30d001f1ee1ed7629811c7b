@@ -1,0 +1,38 @@
+package com.techlabs.spring_demo;
+
+public class Computer {
+	
+	private String name;
+	private HardDisk harddisk;
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public HardDisk getHd() {
+		return hd;
+	}
+	public void setHd(HardDisk hd) {
+		this.hd = hd;
+	}
+	public Computer(String name, HardDisk hd) {
+		
+		this.name = name;
+		this.hd = hd;
+	}
+	public Computer() {
+		
+	}
+	@Override
+	public String toString() {
+		return "Computer [name=" + name + ", hardDisk=" + hd + "]";
+	}
+	
+
+	
+	
+	
+	
+
+}

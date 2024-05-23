@@ -1,0 +1,25 @@
+package com.techlabs.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.techlabs.entity.Student;
+import com.techlabs.service.StudentService;
+
+@RequestMapping("/")
+public class StudentController {
+	
+	@Autowired StudentService service;
+	
+	@PostMapping("/student")
+	public void save(@RequestBody Student s) {
+		service.save(s);
+	}
+	
+	
+	
+	
+
+}

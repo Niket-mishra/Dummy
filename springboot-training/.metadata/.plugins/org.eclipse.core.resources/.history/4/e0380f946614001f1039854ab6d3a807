@@ -1,0 +1,23 @@
+package com.techlabs.exceptions;
+
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.ControllerAdvice;
+import org.springframework.web.bind.annotation.ExceptionHandler;
+
+import com.techlabs.errors.StudentResponseError;
+
+@ControllerAdvice
+public class StudentException {
+	
+	@ExceptionHandler
+	public ResponseEntity<StudentResponseError> getException(StudentNotFoundException  e){
+		StudentResponseError error =new StudentResponseError();
+		error.setMessage(e.getMessage());
+		error.setStatus(HttpStatus.NOT_FOUND.value());
+		error.setTimestasmap(System.currentTimeMillis());
+		
+		return new ResponseEntity<>(error,HttpStatus.NOT_FOUND);
+	}
+
+}

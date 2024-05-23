@@ -1,0 +1,8 @@
+package com.techlabs.model;
+
+public class Transaction {
+	private int senderAcNo;
+	private int recieverAcNo;
+	private TransactionType transactionType;
+
+}

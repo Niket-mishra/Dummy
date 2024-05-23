@@ -1,0 +1,59 @@
+package com.techlabs.model;
+
+public class Account {
+	protected long accNo;
+	protected double balance;
+	protected int userid;
+	protected Transactions transaction;
+	
+	
+	public Account(long accNo, double balance, int userid) {
+		this.accNo = accNo;
+		this.balance = balance;
+		this.userid = userid;
+	}
+
+
+	public long getAccNo() {
+		return accNo;
+	}
+
+
+	public void setAccNo(long accNo) {
+		this.accNo = accNo;
+	}
+
+
+	public double getBalance() {
+		return balance;
+	}
+
+
+	public void setBalance(double balance) {
+		this.balance = balance;
+	}
+
+
+	public int getUserid() {
+		return userid;
+	}
+
+
+	public void setUserid(int userid) {
+		this.userid = userid;
+	}
+
+
+	public Account() {
+	}
+
+
+	public Account(long accNo, double balance) {
+		this.accNo = accNo;
+		this.balance = balance;
+	}
+	
+	
+	
+
+}

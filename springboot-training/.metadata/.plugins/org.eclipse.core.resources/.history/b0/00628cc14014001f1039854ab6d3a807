@@ -1,0 +1,21 @@
+package com.techlabs.service;
+
+import org.springframework.data.domain.Page;
+
+import com.techlabs.entity.Employee;
+
+public class EmployeeServiceImpl implements EmployeeService {
+
+	@Override
+	public Page<Employee> getEmployeePage(int pageno, int pagesize) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Page<Employee> getSortedPage(int pageno, int pagesize, String sort) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

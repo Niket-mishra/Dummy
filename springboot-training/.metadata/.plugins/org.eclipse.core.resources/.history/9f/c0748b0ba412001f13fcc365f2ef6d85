@@ -1,0 +1,26 @@
+package com.techlabs.entity;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
+import lombok.Getter;
+import lombok.RequiredArgsConstructor;
+import lombok.Setter;
+
+@Entity @Table(name="student")
+@RequiredArgsConstructor
+@Getter
+@Setter
+public class Student {
+ 
+	@Column
+	private int rollno;
+	
+	@Column
+	private String fname;
+	
+	@Column
+	private String lname;
+	
+	@Column
+	private String email;
+}

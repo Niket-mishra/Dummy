@@ -1,0 +1,61 @@
+package com.techlabs.model;
+
+import java.util.Date;
+
+public class Transactions {
+	
+	protected int transactionId;
+	protected long senderAcNo;
+	protected long recieverAcNo;
+	protected double amount;
+	protected Date date;
+	protected TransactionType transactionType;
+	public int getTransactionId() {
+		return transactionId;
+	}
+	public void setTransactionId(int transactionId) {
+		this.transactionId = transactionId;
+	}
+	public long getSenderAcNo() {
+		return senderAcNo;
+	}
+	public void setSenderAcNo(long senderAcNo) {
+		this.senderAcNo = senderAcNo;
+	}
+	public long getRecieverAcNo() {
+		return recieverAcNo;
+	}
+	public void setRecieverAcNo(long recieverAcNo) {
+		this.recieverAcNo = recieverAcNo;
+	}
+	public double getAmount() {
+		return amount;
+	}
+	public void setAmount(double amount) {
+		this.amount = amount;
+	}
+	public Date getDate() {
+		return date;
+	}
+	public void setDate(Date date) {
+		this.date = date;
+	}
+	public TransactionType getTransactionType() {
+		return transactionType;
+	}
+	public void setTransactionType(TransactionType transactionType) {
+		this.transactionType = transactionType;
+	}
+	public Transactions(int transactionId, long senderAcNo, long recieverAcNo, double amount, Date date,
+			TransactionType transactionType) {
+		this.transactionId = transactionId;
+		this.senderAcNo = senderAcNo;
+		this.recieverAcNo = recieverAcNo;
+		this.amount = amount;
+		this.date = date;
+		this.transactionType = transactionType;
+	}
+	 
+	
+	
+}

@@ -1,0 +1,71 @@
+package com.techlabs.service;
+
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
+import org.springframework.stereotype.Service;
+
+import com.techlabs.entity.Student;
+import com.techlabs.repository.StudentRepo;
+
+@Service
+public class StudentServiceImpl implements StudentService{
+	
+	@Autowired private StudentRepo repo;
+
+	@Override
+	public void save(Student student) {
+		repo.save(student);
+	}
+
+	@Override
+	public List<Student> getAllStudents() {
+		return repo.findAll();
+	}
+
+	@Override
+	public Student getStudentbyid(int id) {
+		Optional<Student> dbStudent= repo.findById(id);
+		Student student=null;
+		if(dbStudent.isPresent())
+			student= dbStudent.get();
+		
+		return student;
+	}
+
+	@Override
+	public List<Student> searchByName(String name) {
+	
+		return repo.findByFname(name);
+	}
+
+	@Override
+	public Page<Student> getStudentPagination(int pageno, int pagesize, String sort) {
+		Pageable pageable = null;
+		if(sort!= null) {
+			pageable =  PageRequest.of(pageno, pagesize, Sort.by(sort));
+		}
+		else {
+			pageable =  PageRequest.of(pageno, pagesize);
+		}
+		return repo.findAll(pageable);
+	}
+
+	@Override
+	public Page<Student> getSortedPagw(int pageno, int pagesize) {
+		Pageable pageable = null;
+		if(sort!= null) {
+			pageable =  PageRequest.of(pageno, pagesize, Sort.by(sort));
+		}
+		else {
+			pageable =  PageRequest.of(pageno, pagesize, Sort.by("name"));
+		}
+		return repo.findAll(pageable);
+	}
+
+}

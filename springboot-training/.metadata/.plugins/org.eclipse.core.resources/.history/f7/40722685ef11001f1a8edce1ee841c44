@@ -1,0 +1,14 @@
+package com.techlabs.repository;
+
+import java.util.List;
+
+import org.springframework.stereotype.Repository;
+
+import com.techlabs.entity.Employee;
+
+@Repository
+public interface EmployeeRepository {
+
+	void save(Employee e);
+	List<Employee> getEmployee();
+}

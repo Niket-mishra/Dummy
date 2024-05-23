@@ -1,0 +1,19 @@
+package com.techlabs.exceptions;
+
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.ControllerAdvice;
+import org.springframework.web.bind.annotation.ExceptionHandler;
+
+import com.techlabs.errors.StudentResponseError;
+
+@ControllerAdvice
+public class StudentException {
+	
+	@ExceptionHandler
+	public ResponseEntity<StudentResponseError> getException(){
+		StudentResponseError error =new StudentResponseError();
+		
+		
+	}
+
+}

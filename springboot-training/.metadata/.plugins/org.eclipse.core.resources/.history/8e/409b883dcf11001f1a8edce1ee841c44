@@ -1,0 +1,29 @@
+package com.techlabs.dao;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+
+import com.techlabs.entity.Employee;
+
+import jakarta.persistence.EntityManager;
+
+@Repository
+public class EmployeeDaoImpl implements EmployeeDao {
+	
+	@Autowired
+	private EntityManager manager1;
+
+	@Override
+	public void save(Employee e) {
+		
+	
+		
+	}
+
+	@Override
+	public List<Employee> getAllEmployee() {
+
+		return null;
+	}
+
+}

@@ -1,0 +1,7 @@
+package com.techlabs.dao;
+
+public interface userDAO {
+	
+	void save(Student student);
+
+}

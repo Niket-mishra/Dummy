@@ -1,0 +1,26 @@
+package com.techlabs.service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.techlabs.entity.Student;
+import com.techlabs.repository.StudentRepository;
+
+public class StudentServiceImpl implements StudentService{
+	
+	@Autowired private StudentRepository repo;
+
+	@Override
+	public void save(Student s) {
+		repo.save(s);
+		
+	}
+
+	@Override
+	public List<Student> getStudents() {
+		
+		return repo.getStudents();
+	}
+
+}

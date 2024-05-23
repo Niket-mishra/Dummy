@@ -1,0 +1,9 @@
+package com.techlabs.model;
+
+public class Account {
+	private long accNo;
+	private double balance;
+	private Bank bank;
+	
+
+}

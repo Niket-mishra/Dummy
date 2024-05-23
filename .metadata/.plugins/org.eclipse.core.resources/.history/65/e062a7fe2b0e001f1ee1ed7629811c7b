@@ -1,0 +1,58 @@
+package com.techlabs.controllers;
+import com.techlabs.model.*;
+
+import jakarta.servlet.RequestDispatcher;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
+
+import java.io.IOException;
+
+
+import com.techlabs.config.DBConnection;
+
+public class LoginController extends HttpServlet {
+	RequestDispatcher rd;
+	
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		String username = request.getParameter("username");
+		String password = request.getParameter("password");
+		String User = request.getParameter("usertype");
+		
+		String UserType = DBConnection.check(username, password);
+		String name = DBConnection.getName();
+		
+		HttpSession session = request.getSession();
+		session.setAttribute("name1", name );
+		if(User.equalsIgnoreCase(UserType)) {
+			if (User.equalsIgnoreCase("ADMIN")) {
+				 rd = request.getRequestDispatcher("/AdminHomePage.jsp");
+					rd.forward(request, response);
+					int a = Account.getAccountNo();
+					System.out.println(a);
+			} else {
+				 rd = request.getRequestDispatcher("/CustomerHomePage.jsp");
+					rd.forward(request, response);
+			}
+			
+		}
+		else 
+		{
+			RequestDispatcher rd = request.getRequestDispatcher("/Login.jsp");
+			rd.include(request, response);
+			
+		}
+	
+		
+	}
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		doGet(request, response);
+	}
+
+}

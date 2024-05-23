@@ -1,0 +1,18 @@
+package com.techlabs.dao;
+
+import com.techlabs.entity.Employee;
+
+public class EmployeeDaoImpl implements EmployeeDao {
+
+	@Override
+	public void save(Employee e) {
+		
+	}
+
+	@Override
+	public List<Employee> getAllEmployee() {
+
+		return null;
+	}
+
+}

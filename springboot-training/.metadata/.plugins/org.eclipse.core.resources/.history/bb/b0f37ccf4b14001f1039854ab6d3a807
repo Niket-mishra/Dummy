@@ -1,0 +1,61 @@
+package com.techlabs.controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.context.properties.bind.DefaultValue;
+import org.springframework.data.domain.Page;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.techlabs.entity.Student;
+import com.techlabs.service.StudentService;
+
+@RestController
+@RequestMapping("/")
+public class StudentController {
+ 
+	@Autowired private StudentService service;
+	
+	
+	@PostMapping("/students")
+	public void save(@RequestBody Student student) {
+		service.save(student);
+	}
+
+//	@GetMapping("/students")
+//	public List<Student> getAllStudents() {
+//		return service.getAllStudents();
+//	}
+
+	@GetMapping("/students/{id}")
+	public Student getStudentbyid(@PathVariable int id) {
+		return service.getStudentbyid(id);
+	}
+	
+	@GetMapping("/students")
+	public List<Student> getStudentbyName(@RequestParam String name) {
+		return service.searchByName(name);
+	}
+	
+	@GetMapping("/pagination")
+	public List<Student> getPageStudents(@RequestParam int pageno, @RequestParam int pagesize, @RequestParam @DefaultValue("rollno") String sort ){
+		
+		
+		Page<Student> students = null;
+		if(sort!= null) {
+			students = service.getStudentPagination(pageno, pagesize, sort);
+		}
+		else {
+			students = service.getSortedPage(pageno, pagesize);
+		}
+		return students.getContent();
+	}
+	
+		
+}

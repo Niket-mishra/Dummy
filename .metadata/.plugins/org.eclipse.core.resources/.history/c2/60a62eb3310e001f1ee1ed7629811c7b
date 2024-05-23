@@ -1,0 +1,121 @@
+package com.techlabs.config;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
+
+import jakarta.servlet.RequestDispatcher;
+
+public class DBConnection {
+	private static Connection connection;
+	private DBConnection() {}
+	private static String name ="";
+	private int i=3;
+	RequestDispatcher rd;
+	
+	
+	public static String check(String username,String password) {
+		String UserType = "";
+		
+			try {
+				Class.forName("com.mysql.cj.jdbc.Driver");
+				connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/bank","root","niket123");
+				Statement statement = connection.createStatement();
+				ResultSet set = statement.executeQuery("Select * from users ;");
+				while(set.next()) {
+					if(set.getString(5).equalsIgnoreCase(password) && set.getString(4).equalsIgnoreCase(username)) {
+						UserType = set.getString(6);
+						name = set.getString(2)+" "+set.getString(3);
+						break;
+					} else System.out.println(set.getString(5) + " , " + set.getString(4));
+				}
+				
+			} catch (SQLException e) {
+				
+				e.printStackTrace();
+			} catch (ClassNotFoundException e) {
+				e.printStackTrace();
+			}
+			return UserType;
+	}
+	
+	public static String getName() {
+		return name;
+	}
+	public static void add(String fname,String lname,String email,String pass) {
+		 
+	
+		
+			Statement statement;
+			try {
+				Class.forName("com.mysql.cj.jdbc.Driver");
+				connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/bank","root","niket123");
+				statement = connection.createStatement();
+				ResultSet set = statement.executeQuery("Select * from users");
+				int i = 1;
+				while (set.next()) {
+					i++;
+					
+				}
+				PreparedStatement stmt=connection.prepareStatement("Insert into users values(?,?,?,?,?,?)");  
+				
+				stmt.setInt(1,i);  
+				stmt.setString(2,fname);
+				stmt.setString(3,lname);
+				stmt.setString(4,email);
+				stmt.setString(5,pass);
+				stmt.setString(6,"CUSTOMER");
+				int j = stmt.executeUpdate();
+				
+				
+			} catch (SQLException e) {
+				e.printStackTrace();
+			} catch (ClassNotFoundException e) {
+				e.printStackTrace();
+			}
+			
+	}
+	public static List<String> getDetails(int id) {
+		List<String> detailsList = new ArrayList<>();
+		List<Double> detailsList1 = new ArrayList<>();
+		
+		
+		Statement statement;
+		try {
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/bank","root","niket123");
+			PreparedStatement stmt=connection.prepareStatement("select * from users u,accounts a where u.userid = a.userid = ?;");  
+			stmt.setInt(1, id);
+			
+			ResultSet set = stmt.executeQuery();
+			while (set.next()) {
+				
+				detailsList.add((String) set.getString(2));
+				detailsList.add((String) set.getString(3));
+				detailsList.add((String) set.getString(4));
+				detailsList.add((String) (""+set.getDouble(7)));
+				detailsList.add((String) (""+set.getDouble(8)));
+				
+			}
+			
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		}
+		
+		return detailsList;
+		
+		
+	}
+	 
+	
+	
+
+}
+

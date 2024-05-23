@@ -1,0 +1,11 @@
+package com.techlabs.dao;
+
+import com.techlabs.entity.Employee;
+
+public interface EmployeeDao {
+	
+	void save(Employee e);
+	
+	public List<Employee> getAllEmployee();
+
+}

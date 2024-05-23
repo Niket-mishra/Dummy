@@ -1,0 +1,16 @@
+127.0.0.1 - - [23/Apr/2024:15:21:39 +0530] "GET / HTTP/1.1" 404 752
+0:0:0:0:0:0:0:1 - - [23/Apr/2024:15:21:40 +0530] "GET /Web-app/WEB-INF/classes/com/techlabs/swabav/MyServer.java HTTP/1.1" 404 683
+0:0:0:0:0:0:0:1 - - [23/Apr/2024:15:24:01 +0530] "GET /Web-app/WEB-INF/classes/com/techlabs/swabav/MyServer.java HTTP/1.1" 404 683
+0:0:0:0:0:0:0:1 - - [23/Apr/2024:15:24:02 +0530] "GET /Web-app/WEB-INF/classes/com/techlabs/swabav/MyServer.java HTTP/1.1" 404 683
+127.0.0.1 - - [23/Apr/2024:15:24:52 +0530] "GET / HTTP/1.1" 404 752
+0:0:0:0:0:0:0:1 - - [23/Apr/2024:15:24:53 +0530] "GET /Web-app/WEB-INF/classes/com/techlabs/swabav/MyServer.java HTTP/1.1" 404 683
+127.0.0.1 - - [23/Apr/2024:15:31:46 +0530] "GET / HTTP/1.1" 404 752
+0:0:0:0:0:0:0:1 - - [23/Apr/2024:15:31:47 +0530] "GET /Web-app/WEB-INF/index.html HTTP/1.1" 404 683
+0:0:0:0:0:0:0:1 - - [23/Apr/2024:15:31:52 +0530] "GET /Web-app/WEB-INF/index.html HTTP/1.1" 404 683
+0:0:0:0:0:0:0:1 - - [23/Apr/2024:15:31:53 +0530] "GET /Web-app/WEB-INF/index.html HTTP/1.1" 404 683
+0:0:0:0:0:0:0:1 - - [23/Apr/2024:15:32:02 +0530] "GET /Web-app/WEB-INF/index.html HTTP/1.1" 404 683
+127.0.0.1 - - [23/Apr/2024:15:32:57 +0530] "GET / HTTP/1.1" 404 752
+0:0:0:0:0:0:0:1 - - [23/Apr/2024:15:32:58 +0530] "GET /Web-app/index.html HTTP/1.1" 200 192
+0:0:0:0:0:0:0:1 - - [23/Apr/2024:15:33:03 +0530] "GET /Web-app/MyServer.java? HTTP/1.1" 404 777
+0:0:0:0:0:0:0:1 - - [23/Apr/2024:15:33:45 +0530] "GET /Web-app/index.html HTTP/1.1" 200 187
+0:0:0:0:0:0:0:1 - - [23/Apr/2024:15:33:48 +0530] "GET /Web-app/MyServer? HTTP/1.1" 200 19

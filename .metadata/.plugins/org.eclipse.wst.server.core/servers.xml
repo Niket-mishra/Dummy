@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<servers>
+  <server auto-publish-setting="2" auto-publish-time="1" configuration-id="/Servers/Tomcat v10.1 Server at localhost-config" deployDir="wtpwebapps" hostname="localhost" id="Tomcat v10.1 Server at localhost" name="Tomcat v10.1 Server at localhost" runtime-id="apache-tomcat-10.1.19" server-type="org.eclipse.jst.server.tomcat.101" server-type-id="org.eclipse.jst.server.tomcat.101" start-timeout="60" stop-timeout="15" testEnvironment="true" timestamp="5">
+    <list key="modules" value0="webproject::org.eclipse.jst.jee.server:webproject::jst.web::6.0"/>
+  </server>
+  <server auto-publish-setting="2" auto-publish-time="1" configuration-id="/Servers/apache-tomcat-10.1.19 at localhost-config" deployDir="wtpwebapps" hostname="localhost" id="apache-tomcat-10.1.19 at localhost" name="apache-tomcat-10.1.19 at localhost" runtime-id="apache-tomcat-10.1.19" server-type="org.eclipse.jst.server.tomcat.101" server-type-id="org.eclipse.jst.server.tomcat.101" start-timeout="60" stop-timeout="15" testEnvironment="true" timestamp="8">
+    <list key="modules" value0="Web-app::org.eclipse.jst.jee.server:Web-app::jst.web::6.0" value1="02-Login-Page::org.eclipse.jst.jee.server:02-Login-Page::jst.web::6.0" value2="03-Jsp-pages::org.eclipse.jst.jee.server:03-Jsp-pages::jst.web::6.0" value3="04-Session-Management::org.eclipse.jst.jee.server:04-Session-Management::jst.web::6.0" value4="05-Session-Management-Using-HTTP::org.eclipse.jst.jee.server:05-Session-Management-Using-HTTP::jst.web::6.0" value5="06-DB-Connection-app::org.eclipse.jst.jee.server:06-DB-Connection-app::jst.web::6.0" value6="Mini-Project::org.eclipse.jst.jee.server:Mini-Project::jst.web::6.0" value7="demo::org.eclipse.jst.jee.server:demo::jst.web::6.0"/>
+  </server>
+</servers>

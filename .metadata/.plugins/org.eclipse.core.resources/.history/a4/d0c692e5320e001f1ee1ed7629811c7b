@@ -1,0 +1,46 @@
+package com.techlabs.controllers;
+
+import java.io.IOException;
+import java.util.List;
+
+
+import com.techlabs.config.DBConnection;
+
+import jakarta.servlet.RequestDispatcher;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
+
+
+public class AdminController extends HttpServlet {
+
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		int id = Integer.parseInt(request.getParameter("id"));
+		
+		List<String> a = DBConnection.getDetails(id);
+		
+		
+			HttpSession session = request.getSession();
+			session.setAttribute("fname", a.get(0));
+			session.setAttribute("lname", a.get(1));
+			session.setAttribute("email", a.get(2));
+//			session.setAttribute("accNo", a.get(3));
+//			session.setAttribute("bal", a.get(4));
+			
+			System.out.println(a);
+			RequestDispatcher rd = request.getRequestDispatcher("/AdminHomePage.jsp");
+			rd.forward(request, response);
+			
+			
+		
+	}
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+		doGet(request, response);
+	}
+
+}

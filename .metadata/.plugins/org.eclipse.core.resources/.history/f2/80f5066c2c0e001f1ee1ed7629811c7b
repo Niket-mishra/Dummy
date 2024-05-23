@@ -1,0 +1,19 @@
+package com.techlabs.controllers;
+
+import java.util.concurrent.ThreadLocalRandom;
+
+public class Account {
+	
+	
+	public static long getAccountNo()
+	{
+		long m = 500000000000000000000000000000000000000000000000000L; // Lower bound (inclusive)
+		long n = 10000000000000000000000000000000000000000000000000000000000L;
+		long randomLongInRange = ThreadLocalRandom.current().nextLong(m, n);
+		return randomLongInRange;
+		
+	}
+	public static void main(String[] args) {
+		System.out.println(getAccountNo());
+	}
+}

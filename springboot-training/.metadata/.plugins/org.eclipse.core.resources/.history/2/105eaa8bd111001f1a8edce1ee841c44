@@ -1,0 +1,35 @@
+package com.techlabs.dao;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+
+import com.techlabs.entity.Employee;
+
+
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.TypedQuery;
+import jakarta.transaction.Transactional;
+
+@Repository
+public class EmployeeDaoImpl implements EmployeeDao {
+	
+	@Autowired
+	private EntityManager manager1;
+	
+	
+	@Override
+	@Transactional
+	public void save(Employee e) {
+		 manager1.persist(e); 
+		 System.out.println("Records Inserted");
+		
+	}
+
+	@Override
+	public List<Employee> getAllEmployee() {
+		TypedQuery <Employee> query = manager1.createQuery("select e from Employee e",Employee.class);
+		return query.getResultList();	}
+
+}

@@ -1,0 +1,24 @@
+package com.techlabs.dao;
+
+import org.apache.catalina.Manager;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+
+import com.techlabs.entity.Student;
+
+import jakarta.persistence.EntityManager;
+
+@Repository
+public class StudentDaoImpl implements StudentDao{
+	
+	@Autowired
+	private EntityManager manager;
+
+	@Override
+	public void save(Student student) {
+		
+		manager.persist(student);
+		System.out.println("Records Inserted");
+	}
+
+}

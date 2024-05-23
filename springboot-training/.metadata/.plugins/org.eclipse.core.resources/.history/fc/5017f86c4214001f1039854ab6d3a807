@@ -1,0 +1,32 @@
+package com.techlabs.controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.techlabs.entity.Employee;
+import com.techlabs.service.EmployeeService;
+
+@RestController
+@RequestMapping("/emp")
+public class EmployeeController {
+
+	@Autowired EmployeeService service;
+	
+	@GetMapping("/pagination")
+	public List<Employee> getEmployeePage(int pageno,int pagesize){
+		Page<Employee> employees = service.getEmployeePage(pageno, pagesize);
+		return employees.getContent();
+	}
+	
+	@GetMapping("/paginations")
+	public List<Employee> getSortedPage(int pageno,int pagesize, String sort){
+		Page<Employee> employees = service.getSortedPage(pageno, pagesize,sort);
+		return employees.getContent();
+	}
+	
+}

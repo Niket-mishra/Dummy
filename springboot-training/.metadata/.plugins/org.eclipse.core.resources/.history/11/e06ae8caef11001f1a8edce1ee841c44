@@ -1,0 +1,31 @@
+package com.techlabs.repository;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+
+import com.techlabs.entity.Employee;
+
+import jakarta.persistence.EntityManager;
+import jakarta.transaction.Transactional;
+
+@Repository
+public class EmployeeRepositoryImpl implements EmployeeRepository {
+
+	@Autowired EntityManager manager;
+	
+	@Override
+	@Transactional
+	public void save(Employee e) {
+		manager.persist(e);
+
+	}
+
+	@Override
+	public List<Employee> getEmployee() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

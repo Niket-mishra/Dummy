@@ -1,0 +1,14 @@
+package com.techlabs.model;
+
+public class User {
+	protected int id;
+    protected String fname;
+    protected String lname;
+    protected String email;
+    protected String password;
+    protected List<Account> accounts;
+
+    public User() {}
+
+
+}

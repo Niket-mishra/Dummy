@@ -1,0 +1,13 @@
+package com.techlabs.model;
+
+import java.util.Date;
+
+public class Transactions {
+	
+	protected int transactionId;
+	protected long senderAcNo;
+	protected long recieverAcNo;
+	protected double amount;
+	protected Date date;
+	protected TransactionType transactionType;
+}

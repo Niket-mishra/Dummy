@@ -1,0 +1,19 @@
+package com.techlabs.controller;
+
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.techlabs.service.EmployeeService;
+
+@RequestMapping("/")
+public class EmployeeController {
+	
+	private EmployeeService service;
+	
+	public static void save(@RequestBody Employee e) {
+		
+	}
+	
+	
+
+}

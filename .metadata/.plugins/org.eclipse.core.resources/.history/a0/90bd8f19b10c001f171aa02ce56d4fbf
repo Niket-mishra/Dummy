@@ -1,0 +1,42 @@
+package com.techlabs.controllers;
+import com.techlabs.model.*;
+
+import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+import com.techlabs.config.DBConnection;
+
+public class LoginController extends HttpServlet {
+	
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		String username = request.getParameter("username");
+		String password = request.getParameter("password");
+		String User = request.getParameter("usertype");
+		
+		DBConnection.check(username, password);
+		if(User.equalsIgnoreCase(UserType.ADMIN.toString())) {
+			System.out.println("Admin");
+		}else 
+		{
+			System.out.println("Customer");
+		}
+	
+		
+	}
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		doGet(request, response);
+	}
+
+}
